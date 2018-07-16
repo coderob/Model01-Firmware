@@ -77,7 +77,9 @@
   */
 
 enum { MACRO_VERSION_INFO,
-       MACRO_ANY
+       MACRO_ANY,
+       MACRO_CMD_SHIFT_LEFT_BRACKET,
+       MACRO_CMD_SHIFT_RIGHT_BRACKET
      };
 
 
@@ -173,10 +175,10 @@ KEYMAPS(
             ___, Key_LeftGui, Key_Delete, ___,
             ___,
 
-   Consumer_ScanPreviousTrack, Key_F6,                 Key_F7,                   Key_F8,                   Key_F9,          Key_F10,          Key_F11,
-   Consumer_PlaySlashPause,    Consumer_ScanNextTrack, Key_LeftCurlyBracket,     Key_RightCurlyBracket,    Key_LeftBracket, Key_RightBracket, Key_F12,
-                               ___,                    ___,                      ___,                      ___,             ___,              ___,
-   Key_PcApplication,          Consumer_Mute,          Consumer_VolumeDecrement, Consumer_VolumeIncrement, ___,             Key_Backslash,    Key_Pipe,
+   Consumer_ScanPreviousTrack, Key_F6,                 Key_F7,                          Key_F8,                              Key_F9,          Key_F10,          Key_F11,
+   Consumer_PlaySlashPause,    Consumer_ScanNextTrack, Key_LeftCurlyBracket,            Key_RightCurlyBracket,               Key_LeftBracket, Key_RightBracket, Key_F12,
+                               ___,                    M(MACRO_CMD_SHIFT_LEFT_BRACKET), M(MACRO_CMD_SHIFT_RIGHT_BRACKET),    ___,             ___,              ___,
+   Key_PcApplication,          Consumer_Mute,          Consumer_VolumeDecrement,        Consumer_VolumeIncrement, ___,       Key_Backslash,   Key_Pipe,
             ___, ___, Key_Enter, ___,
             ___)
 
@@ -237,7 +239,16 @@ const macro_t *macroAction(uint8_t macroIndex, uint8_t keyState) {
   case MACRO_ANY:
     anyKeyMacro(keyState);
     break;
+
+  case MACRO_CMD_SHIFT_LEFT_BRACKET:
+    return MACRODOWN(D(LeftShift), D(LeftGui), D(LeftBracket));
+    break;
+
+  case MACRO_CMD_SHIFT_RIGHT_BRACKET:
+    return MACRODOWN(D(LeftShift), D(LeftGui), D(RightBracket));
+    break;
   }
+
   return MACRO_NONE;
 }
 
