@@ -168,10 +168,10 @@ KEYMAPS(
 
 
   [FUNCTION] =  KEYMAP_STACKED
-  (___,      Key_F1,           Key_F2,        Key_F3,        Key_F4,         Key_F5, XXX,
-   Key_Tab,  ___,              ___,           Key_UpArrow,   ___,            ___,    ___,
-   Key_Home, Key_mouseL,       Key_LeftArrow, Key_DownArrow, Key_RightArrow, ___,
-   Key_End,  Key_PrintScreen,  Key_Insert,    ___,           ___,            ___,    ___,
+  (___,      Key_F1,          Key_F2,        Key_F3,        Key_F4,         Key_F5, XXX,
+   Key_Tab,  ___,             ___,           Key_UpArrow,   ___,            ___,    ___,
+   Key_Home, Key_mouseBtnL,   Key_LeftArrow, Key_DownArrow, Key_RightArrow, ___,
+   Key_End,  Key_PrintScreen, Key_Insert,    ___,           ___,            ___,    ___,
             ___, Key_LeftGui, Key_Delete, ___,
             ___,
 
