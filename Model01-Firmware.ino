@@ -25,6 +25,9 @@
 // Support for controlling the keyboard's LEDs
 #include "Kaleidoscope-LEDControl.h"
 
+// Makes waves of light splash out from each keypress. When idle, simulates rainfall
+#include <Kaleidoscope-LED-Wavepool.h>
+
 // Support for "Numpad" mode, which is mostly just the Numpad specific LED mode
 #include "Kaleidoscope-NumPad.h"
 
@@ -313,6 +316,10 @@ void setup() {
     // and slowly moves the rainbow across your keyboard
     &LEDRainbowWaveEffect,
 
+    // The LED Wavepool effect makes waves of light splash out from each keypress. When idle,
+    // it will simulate gentle rainfall on the keyboard.
+    &WavepoolEffect,
+
     // The chase effect follows the adventure of a blue pixel which chases a red pixel across
     // your keyboard. Spoiler: the blue pixel never catches the red pixel
     &LEDChaseEffect,
@@ -356,6 +363,7 @@ void setup() {
   // This draws more than 500mA, but looks much nicer than a dimmer effect
   LEDRainbowEffect.brightness(150);
   LEDRainbowWaveEffect.brightness(150);
+  WavepoolEffect.idle_timeout = 1000;
 
   // The LED Stalker mode has a few effects. The one we like is
   // called 'BlazingTrail'. For details on other options,
