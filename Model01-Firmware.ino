@@ -150,10 +150,10 @@ KEYMAPS(
 
 
   [NUMPAD] =  KEYMAP_STACKED
-  (___, ___, ___, ___, ___, ___, ___,
-   ___, ___, ___, ___, ___, ___, ___,
-   ___, ___, ___, ___, ___, ___,
-   ___, ___, ___, ___, ___, ___, ___,
+  (___, ___, ___,             ___,              ___,             ___,           ___,
+   ___, ___, Key_mouseWarpNW, Key_mouseUp,      Key_mouseWarpNE, Key_mouseBtnR, ___,
+   ___, ___, Key_mouseL,      Key_mouseDn,      Key_mouseR,      Key_mouseBtnL,
+   ___, ___, Key_mouseWarpSW, Key_mouseWarpEnd, Key_mouseWarpSE, Key_mouseBtnM, ___,
             ___, Key_LeftGui, ___, ___,
             ___,
 
@@ -166,10 +166,10 @@ KEYMAPS(
 
 
   [FUNCTION] =  KEYMAP_STACKED
-  (___,      Key_F1,           Key_F2,      Key_F3,     Key_F4,        Key_F5,           XXX,
-   Key_Tab,  ___,              Key_mouseUp, ___,        Key_mouseBtnR, Key_mouseWarpEnd, Key_mouseWarpNE,
-   Key_Home, Key_mouseL,       Key_mouseDn, Key_mouseR, Key_mouseBtnL, Key_mouseWarpNW,
-   Key_End,  Key_PrintScreen,  Key_Insert,  ___,        Key_mouseBtnM, Key_mouseWarpSW,  Key_mouseWarpSE,
+  (___,      Key_F1,           Key_F2,      Key_F3, Key_F4, Key_F5, XXX,
+   Key_Tab,  ___,              ___,         ___,    ___,    ___,    ___,
+   Key_Home, ___,              ___,         ___,    ___,    ___,
+   Key_End,  Key_PrintScreen,  Key_Insert,  ___,    ___,    ___,    ___,
             ___, Key_LeftGui, Key_Delete, ___,
             ___,
 
@@ -363,7 +363,7 @@ void setup() {
   // This draws more than 500mA, but looks much nicer than a dimmer effect
   LEDRainbowEffect.brightness(150);
   LEDRainbowWaveEffect.brightness(150);
-  WavepoolEffect.idle_timeout = 1000;
+  WavepoolEffect.idle_timeout = 300;
 
   // The LED Stalker mode has a few effects. The one we like is
   // called 'BlazingTrail'. For details on other options,
